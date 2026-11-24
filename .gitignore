@@ -1,0 +1,29 @@
+# Python bytecode and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+.venv-*/
+
+# Fetched or generated, never committed (see NOTICE): the assets `mrbench assets` fetches, episode logs,
+# snapshots, results and renders (`mrbench run`, `mrbench snapshot`, `mrbench evaluate`, `mrbench render`)
+third_party
+runs/
+*.usd
+*.usda
+*.usdc
+
+# Local secrets: model API keys. Never committed.
+.secrets/
+.env
+
+# Editors and local tooling
+.vscode/
+.idea/
+.claude/settings.local.json
+.DS_Store

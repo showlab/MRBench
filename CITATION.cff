@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use MRBench, please cite the paper."
+title: "MRBench"
+version: "1.0.0"
+type: software
+license: Apache-2.0
+url: "https://showlab.github.io/MRBench/"
+authors:
+  - {family-names: Chen, given-names: Yanzhe}
+  - {family-names: Cao, given-names: Zhijun}
+  - {family-names: An, given-names: Ruihe}
+  - {family-names: Gong, given-names: Chang}
+  - {family-names: Shou, given-names: Mike Zheng}
+preferred-citation:
+  type: article
+  title: "MRBench: Benchmarking Physical Necessity Reasoning in Heterogeneous Multi-Robot Manipulation"
+  journal: "arXiv preprint arXiv:"
+  year: 2026
+  authors:
+    - {family-names: Chen, given-names: Yanzhe}
+    - {family-names: Cao, given-names: Zhijun}
+    - {family-names: An, given-names: Ruihe}
+    - {family-names: Gong, given-names: Chang}
+    - {family-names: Shou, given-names: Mike Zheng}

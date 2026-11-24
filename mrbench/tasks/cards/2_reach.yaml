@@ -1,0 +1,147 @@
+suite: reach
+title: Reach-bound -- no arm reaches everywhere the task goes, so things pass from arm to arm or each arm works where only it reaches
+tasks:
+- id: Rea-01
+  was: HO1
+  name: cross-zone relay
+  summary: >
+    Apples and oranges start far out at the west end of the long table, behind
+    the west arm, and must end in a crate at the far east end, behind the east
+    arm, 2.1 m away -- a kitchen counter. With Pipers at the two ends, neither
+    end arm reaches the other's end, and a partition across the middle of the
+    counter stands where they could meet -- 50 cm high where they reach high,
+    34 cm south of that -- so that they share no place, at the table or over
+    the partition, and every piece passes through a third arm in the middle,
+    which carries it over the partition's low part. South of the low part the
+    partition goes on as a curb to the table's south edge; the only way through
+    is a low channel, roofed over the 30 cm middle where neither end
+    arm reaches. Reference: west -> pad A -> south -> pad B -> east -> crate.
+  arms:
+  - {mount: west, model: piper, role: "picks the fruit from the start area and puts it on pad A"}
+  - {mount: south, model: panda, role: "moves the fruit from pad A to pad B"}
+  - {mount: east, model: piper, role: "moves the fruit from pad B into the crate"}
+  knob: {field: num_fruit, description: pieces of fruit to relay, levels: {easy: 1, hard: 3}, unit: pieces}
+  horizon_s: 90
+  success: every piece of fruit inside the crate for 1 s and still there when the run ends, through its last second at least
+  milestones: [fruit_on_pad_a, fruit_on_pad_b, fruit_in_bin, all_in_bin]
+  status: implemented
+  impl: mrbench.tasks.impl.rea01_relay
+  look: workshop
+  variants: [exact, borrow]
+  borrow:
+    remove: south
+    replaces: "the south arm: carrying the fruit across the middle of the table"
+    prop: "a 67 cm long wooden paddle with a black knob at its west end and a low rim for a piece at its east end: the west arm sets a piece within the rim and pushes the paddle by its knob through the channel until the piece comes out within the east arm's reach; the east arm takes it off"
+    distractor: "by seed, one of two: the same paddle 16 cm long (pushed by its knob, which the hand cannot take into the channel, it leaves the piece short of the channel's middle, out of both end arms' reach), or the same 67 cm paddle whose rim's east side stands 12 cm over the table (taller than the channel's 11 cm under its roof, it does not go in); over seeds 0-4 of both levels the prop is the larger in half"
+
+- id: Rea-02
+  was: TR1
+  name: tomato flume
+  summary: >
+    A cherry tomato, 4 cm across, sits on top of a shelf at the far west end of the table; a
+    pot stands at the far east end, 2.1 m away. Three wooden channels (0.80,
+    0.55 and 0.80 m long, each wider than the one before) are to be laid end to
+    end on two stands between them, every channel's lower end inside the next
+    one's upper end, so that the tomato, let go, rolls down the track into the
+    pot. The shelf's top slopes toward the track and a stop at its edge holds the
+    tomato back. Each channel starts where only one arm reaches it -- the short
+    middle one behind the south arm, no part of it within the end arms' reach --
+    and only the west arm reaches the stop: without the middle channel the track
+    has a gap, so it takes three arms. Laid on the stands, the channels stay
+    put: no arm holds anything while the tomato rolls.
+    Reference: the east Piper lays the lowest channel, the south Franka the middle
+    one, the west Piper the upper one; then the west Piper lifts the stop away.
+  facts:
+  - A channel laid on the stands, or with its lower end inside a wider channel, stays there by itself.
+  - The top of the shelf slopes toward the east; the stop at its edge holds the tomato back.
+  - The shelf, the stands and the pot are fixed to the table.
+  - The middle channel lies in a cradle fixed to the table; it comes out only lifted.
+  arms:
+  - {mount: west, model: piper, role: "lays the upper channel from the shelf into the middle one, then lifts the stop away"}
+  - {mount: south, model: panda, role: "lays the middle channel on its stand, its lower end inside the lowest one"}
+  - {mount: east, model: piper, role: "lays the lowest channel on its stand and the pot's rim"}
+  knob: {field: fit_room, description: "room each side of a channel in its stands' slots (the next channel down leaves twice that and 2 mm, so a lower end always falls inside it)", levels: {easy: 6, hard: 3}, unit: mm}
+  horizon_s: 60
+  # the other gold teams take longer than the reference's three (45.6 s): north + south + west hands the lowest channel
+  # on with a half turn (74.4 s); the swapped version's east Franka draws the middle one out (61.2 s)
+  horizons: {surplus: 90, swapped: 75}
+  success: >
+    the tomato is in the pot within 5 s of leaving the shelf and stays there for
+    1 s, and never lay on the table on the way
+  milestones: [lower_laid, middle_laid, upper_laid, tomato_off_shelf, tomato_in_pot]
+  status: implemented
+  impl: mrbench.tasks.impl.rea02_tomato_flume
+  variants: [exact, borrow]
+  look: workshop
+  borrow:
+    remove: south
+    replaces: "the south arm: laying the middle channel (it lies where only the south arm reaches)"
+    prop: "a long moulded HDPE chute, 1.30 m (the upper and middle channels in one, as wide inside as the upper), lying by the west arm, north of the upper channel or between it and the arm's base (which of the two places, drawn from the seed; the short one lies in the other): laid by the west arm from the shelf, past the first stand, its lower end falls inside the lowest channel on the second stand"
+    distractor: "a short HDPE chute, 0.45 m, as wide inside: laid from the shelf it ends far short of the lowest channel, and laid from the first stand the lowest channel does not reach it (0.50 m between them).  (A 1.05 m chute, laid from the first stand with its upper end held, reaches into the lowest channel -- two arms, the distractor used.  No longer or wider channel fails: a longer one reaches further inside the lowest channel, and one 7.5-17.1 cm wide inside rides on the lips and the lowest channel's walls and still takes the tomato into the pot.)"
+
+- id: Rea-03
+  was: TR2
+  name: domino run
+  summary: >
+    A line of 25 wooden dominoes runs 2 m down the table, 20 cm in front of the
+    south arm, with three gaps: the first place, the last, and a stretch of three
+    in the middle, each in one arm's part of it; the missing dominoes stand by.
+    The line must be set off from its west end so that it falls all the way to
+    its east end -- so the gaps must be filled first. Each gap is within reach of
+    one arm only (the middle stretch well clear of the end arms, checked by IK
+    with margins), and only the west arm reaches the first place: the line is
+    too long for fewer arms. A domino stood in its gap stays up, so no arm holds
+    anything while another works. Reference: the end Pipers fill the end places,
+    the south Piper the middle three, one after another; the west Piper then
+    tips the first one east.
+  arms:
+  - {mount: west, model: piper, role: "stands the first domino, then tips it"}
+  - {mount: south, model: piper, role: "fills the middle three places"}
+  - {mount: east, model: piper, role: "stands the last domino"}
+  knob: {field: spacing, description: distance between neighbouring dominoes (wider leaves less room for error in the chain), levels: {easy: 75, hard: 79}, unit: mm}
+  horizon_s: 75
+  success: the line was whole when the domino on its first place fell (each standing domino within falling reach of the next, from the first place to the last; a domino knocked where it waits, off the line, sets nothing off), and every domino on the line has fallen (tilted past 15 degrees) for 1 s
+  milestones: [west_gap_filled, middle_gap_filled, east_gap_filled, first_down, all_down]
+  status: implemented
+  impl: mrbench.tasks.impl.rea03_domino_run
+  look: workshop
+  variants: [exact, borrow]
+  borrow:
+    remove: south
+    replaces: "the south arm: standing a domino in the middle gap (the whole middle stretch is the south arm's alone)"
+    prop: "a light wooden slat 30 cm tall, like a long domino (30 x 4 x 2 cm, 50 g), standing on end by the west arm: stood by the west arm in place 10 (the last it reaches, left empty in this version), 28.7 cm from domino_14, it falls east across the empty middle stretch and its top end strikes domino_14's face"
+    distractor: "the same slat, too short or too tall, which drawn from the seed: 24 cm, shorter than the 28.7 cm to domino_14, it falls into the empty stretch; 36 cm, longer than the 31.1 cm from its foot to domino_14's top edge, its side comes down on that edge, presses the domino down and stays leaning on it (the prop is not always the larger)"
+
+- id: Rea-04
+  was: TR3
+  name: wipe the spills
+  summary: >
+    Three coffee spills lie along the counter, one in each arm's part of it,
+    and there is one sponge, on its dish at the far west end; every spill must
+    be wiped and the sponge end in the sink at the far east end. Each spill is
+    within reach of one arm only, the dish of the west arm only and the sink of
+    the east arm only: the counter is too long for fewer arms. The sponge goes
+    from arm to arm, put down on a pad both can reach; put down, it stays, so no
+    arm holds anything while another works -- a tool that travels to the work.
+    The middle spill lies close in front of the south arm, well clear of the
+    end arms (checked by IK with margins). Reference: the west Piper wipes the
+    west spill and puts the sponge on pad A, the south Piper wipes the middle
+    spill and puts it on pad B, the east Piper wipes the east spill and drops it
+    in the sink.
+  arms:
+  - {mount: west, model: piper, role: "takes the sponge off its dish, wipes the west spill, puts it on pad A"}
+  - {mount: south, model: piper, role: "takes the sponge from pad A, wipes the middle spill, puts it on pad B"}
+  - {mount: east, model: piper, role: "takes the sponge from pad B, wipes the east spill, drops it in the sink"}
+  knob: {field: wipe_time, description: how long the sponge must stay down on each spill, levels: {easy: 1, hard: 2}, unit: s}
+  variants: [exact, borrow]
+  horizon_s: 75
+  success: the sponge stayed down on each spill (its middle within 2.5 cm of the spill's) for the knob's time, and lies in the sink for 1 s and still when the run ends, through its last second at least
+  milestones: [west_spill_wiped, middle_spill_wiped, east_spill_wiped, sponge_in_sink]
+  status: implemented
+  impl: mrbench.tasks.impl.rea04_wipe_spills
+  look: workshop
+  borrow:
+    remove: south
+    replaces: "the south arm: wiping the middle spill"
+    prop: "a long-handled sponge brush (a wooden handle, a green plastic head with white bristles, nylon jaws) whose clip holds the sponge, lying by the west arm: holding the shaft, the west arm lifts the sponge onto the 6 cm riser under the middle spill (the riser is in every version) and wipes the spill with the sponge itself"
+    distractor: "the same brush with its clip too narrow for the sponge, or (by the seed) too wide to touch it: it can only push the sponge, which does not get up onto the riser"

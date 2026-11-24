@@ -1,0 +1,11 @@
+MRBench
+Copyright 2026 The MRBench Authors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+No third-party asset is distributed with it. `mrbench assets fetch` downloads
+robot descriptions from their upstream repositories at pinned commits, and
+`mrbench assets looks` downloads table and floor textures and an HDRI from
+Poly Haven (CC0), pinned by SHA-256; Isaac Sim loads the Franka Panda, the
+room, a material and the YCB objects from NVIDIA's asset server. See CREDITS.md
+for sources and licences.

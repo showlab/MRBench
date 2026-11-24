@@ -1,0 +1,178 @@
+suite: concurrency
+title: Concurrency-bound -- one arm cannot be in two places at once, and something has to be held still while another hand works
+tasks:
+- id: Con-01
+  was: P01
+  name: spring doors
+  summary: >
+    A cabinet stands across the middle of the table, its doorway facing the south arm. In
+    front, a low door zone: two spring doors as high as the box, opening inward
+    under a fixed ceiling and lying flat by the side walls when open; behind it,
+    a taller box zone, closed but for a slot over the ceiling, where the box
+    starts. Each door is worked by a low lever outside it: a bar out beside the
+    side wall and a stub with a knob, swung round from beside the cabinet. The box
+    is wider than one door's way, and deeper and taller than it and than the
+    slot, so no turning of it gets it out: both doors must be held open at once
+    while a third hand draws it out between them by its T-handle, whose post runs
+    in a narrow slot in the ceiling -- the hand holding it, and the links behind
+    that hand, stay over the ceiling, where no open door is. Then the box goes on
+    a mat on the table, the doors closed. Neither end arm reaches the other's
+    knob, and no arm does two of the three jobs at once (IK: an end arm's hand can
+    reach the handle, but then none of that arm comes near a door). Reference: the
+    west and east Frankas each take their knob
+    from above and swing the lever round, opening their door to 88 degrees, and
+    hold it; the south Franka reaches in through the slot, takes the box by its
+    handle and draws it out under the ceiling, takes it again from straight above
+    and draws it out through the doors, holds it up while the doors are let go and
+    close under it, and sets it on the mat.
+  facts:
+  - Each door has a spring; let go, it swings shut.
+  - The doors open inward; each is opened and held by its lever's knob, outside the cabinet.
+  arms:
+  - {mount: west, model: panda, role: "swings the west lever round and holds the west door open"}
+  - {mount: east, model: panda, role: "swings the east lever round and holds the east door open"}
+  - {mount: south, model: panda, role: "reaches in through the slot, takes the box out and sets it on the mat"}
+  knob: {field: box_width, description: width of the box (both doors must open further for a wider one), levels: {easy: 23, hard: 26}, unit: cm}
+  horizon_s: 70
+  # the borrow version's team also fetches the weight, pushes the lever round with it and lifts it away again before
+  # the door can close: its scripted reference plays 96.5 s
+  horizons: {borrow: 120}
+  success: >
+    the box left the cabinet, then rests on the green mat with both doors closed,
+    for 1 s and still when the run ends, through its last second at least
+  milestones: [doors_open, box_out, box_on_mat, doors_closed]
+  status: implemented
+  impl: mrbench.tasks.impl.con01_spring_doors
+  look: workshop
+  variants: [exact, borrow]
+  borrow:
+    remove: east
+    replaces: holding one door open
+    prop: "a cast-iron counterweight (9 x 9 cm, 3 kg) on a rubber pad with a yellow lifting handle on top, 9 cm tall in all, set on the table in the east lever's way back as the door opens: the bar (5 cm up) cannot swing back past it"
+    distractor: "the same counterweight 4 cm tall in all: the lever passes over it and the door closes"
+
+- id: Con-02
+  was: P05
+  name: hinged leaves
+  summary: >
+    Two leaves are hinged on posts west and east of the joint, each at its outer
+    end, on level axes, and meet in the air between them as a clevis: the west
+    leaf ends in a tongue, the east one in a fork whose two cheeks straddle it,
+    all three slotted -- but the slots come into line only while both leaves are
+    held level: let go, the west leaf hangs down and the east leaf springs up. A
+    guard closes round the joint: each leaf comes in through a slot in its side
+    wall, and the pin's way in is a small opening in the south wall. A flat pin
+    lies on the table in front of the south arm. Both leaves must be held level
+    at once, each by its bar outside the guard, which only the arm at its end
+    reaches, while a third hand slides the pin through the opening and the
+    three slots; pinned, the tongue pushes the key down in the middle and the
+    cheeks push it up either side, so the leaves hold each other level. Two
+    loose rods could be laid on the table in line, pinned there and lifted
+    together by two arms; and without the guard, a key in one leaf's slot, its
+    pin held, holds that leaf level, so an arm that reached both leaves could
+    hold them in turn and two arms would do. Reference: the west
+    and east Frankas each take their leaf's bar and turn it level; the south
+    Franka takes the pin by its head and slides it through the opening and the
+    three slots while the end arms hold on.
+  facts:
+  - Each leaf turns on a hinge at its post; let go, the blue leaf hangs down and the orange leaf springs up.
+  - The pin is a flat key; each slot fits it only lying flat.
+  arms:
+  - {mount: west, model: panda, role: "holds the blue (west) leaf level"}
+  - {mount: east, model: panda, role: "holds the orange (east) leaf level against its spring"}
+  - {mount: south, model: panda, role: "slides the pin through the three slots"}
+  knob: {field: slot_clearance, description: room each side of the pin's key in a slot, levels: {easy: 6, hard: 3}, unit: mm}
+  horizon_s: 45
+  # with the wide distractor in the corridor's line the borrow team first carries it out of the way and slides the
+  # prop in: that reference plays 49.4 s
+  horizons: {borrow: 60}
+  success: >
+    the pin's key runs through all three slots and both leaves are level within
+    3 degrees, for 1 s
+  milestones: [both_level, pin_in_one, pinned]
+  status: implemented
+  impl: mrbench.tasks.impl.con02_hinged_leaves
+  variants: [exact, borrow]
+  look: workshop
+  borrow:
+    remove: west
+    replaces: holding the blue (west) leaf level
+    prop: a long yellow polymer (UHMW) lifting wedge, like a wheel chock with its placing handle, lying on the table south of the blue leaf's bar, a black rubber tread on its flat top, a yellow handle rising 30 degrees from its back toward the south arm to a short upright with a rubber T-grip across its top; pushed north, its 25-degree ramp slides under the hanging bar outside the guard and lifts it onto a flat top 0.8 mm under the bar's underside when level (19.92 cm)
+    distractor: "one of two, drawn from the scene (half the scenes each): the same lifting wedge with its top 2 cm lower, on which the bar rests 4 degrees low or more (more the nearer its post), its slot 3 cm or more out of line; or the same lifting wedge 32 cm wide, wider than the 25.5 cm between the west post's plate and the guard, so that it meets one of them before it gets under the bar"
+
+- id: Con-03
+  was: P07
+  name: spring lid and basketball
+  summary: >
+    A long box (1.0 x 0.44 m, its long walls 27 cm high, its
+    end walls 20, its inner walls slick and lipped at the top) holds a 22 cm ball, wider than any hand opens (8 cm).
+    Its lid is hinged along the box's south edge on a spring and has no angle it stays open at: let go, it swings
+    shut.  The ball has to go into a cradle on a block 54 cm north of it.  One hand holds the lid open while the two
+    others take the ball between them, lift it out and set it in the cradle.  Reference: the south Franka takes the
+    lid's tab and opens it upright; the west and east Frankas press their closed fingertips into the ball's sides,
+    lift it, carry it north to the cradle and set it down; the south Franka lets the lid down.
+  facts:
+  - The lid is on a spring; let go, it swings shut.
+  - The box's inner walls are slick.
+  arms:
+  - {mount: west, model: panda, role: "squeezes the ball from its west side, lifts it with the east arm and sets it in the cradle"}
+  - {mount: east, model: panda, role: "squeezes the ball from its east side, lifts it with the west arm and sets it in the cradle"}
+  - {mount: south, model: panda, role: "holds the lid open by its tab against its spring"}
+  knob: {field: lid_spring, description: "the lid's spring (stiffer: more to hold, and harder to push open with the ball)", levels: {easy: 0.3, hard: 0.6}, unit: "N*m/rad"}
+  horizon_s: 60
+  success: the ball sits in the cradle for 1 s and is still there when the run ends, through its last second at least
+  milestones: [lid_open, ball_out, ball_in_cradle, ball_settled]
+  status: implemented
+  impl: mrbench.tasks.impl.con03_lid_ball
+  look: workshop
+  variants: [exact, borrow]
+  borrow:
+    remove: south
+    replaces: holding the lid open
+    prop: "a black steel prop rod (a tube, its hook tip yellow) with a pivoting foot in a steel socket south of the box; its hook bight is about 0.72 m from the pivot, and the end arms swing it over the lid edge to hold the lid open"
+    distractor: "the same prop rod, 0.12 m longer or 0.12 m shorter (by seed) and the same mass; the longer hook passes beyond the free edge at every opening, the shorter one never reaches it, so neither can catch the lid"
+
+- id: Con-04
+  name: pressure test
+  summary: >
+    A round steel test pipe with blind flanges
+    lies east-west on two stands in the table's north half, a pressure gauge on
+    its top; its air comes into its underside through a hose from a pneumatic
+    foot valve on the table in front of the south arm. It holds its test
+    pressure only with both of its bleed valves shut while the foot valve lets
+    air in. Each bleed valve has a steel lever on the pipe's top, hinged on the
+    valve body and pointing in along the pipe, a red grip at its end: pressed
+    down, the valve shuts; let go, a spring lifts the lever and the valve bleeds
+    the pipe. The foot valve's pedal is hinged along its north edge and held up
+    by a spring: held down, it lets air in; let go, it rises and shuts.
+    Reference: the west and east Frankas each take their lever's grip and press
+    it down, the south Franka takes the pedal's toe bar and presses it down,
+    all three hold for the test and let go. Why not two: three bodies held down
+    at once, one hand each; each lever's grip is reached only by the arm at its
+    end of the table (the south arm is 1.04 m from either, the far end arm
+    1.02 m), and with the end arms' hands on the levers no hand is left for the
+    pedal.
+  facts:
+  - Each bleed valve has a spring; let go, its lever lifts and the valve opens.
+  - The foot valve has a spring; held down it lets air in, let go it rises and shuts.
+  arms:
+  - {mount: west, model: panda, role: "holds the west bleed valve shut"}
+  - {mount: east, model: panda, role: "holds the east bleed valve shut"}
+  - {mount: south, model: panda, role: "holds the foot valve's pedal down: air in"}
+  knob: {field: valve_spring, description: "each bleed valve's spring (stiffer: more to hold down)", levels: {easy: 2.0, hard: 3.0}, unit: N*m/rad}
+  horizon_s: 30
+  # the borrow team first sets the weight on the pedal
+  horizons: {borrow: 45}
+  success: >
+    both bleed valves' levers held down, shutting them, while the foot valve's
+    pedal is held down, all at once, for 1 s
+  milestones: [air_in, bleeds_shut, pressure_held]
+  status: implemented
+  impl: mrbench.tasks.impl.con04_pressure_test
+  look: workshop
+  variants: [exact, borrow]
+  borrow:
+    remove: south
+    replaces: holding the foot valve's pedal down
+    prop: "a steel test weight 9 cm round and 4.8 cm tall (2.4 kg), a knob on a neck on top: set in the pocket on the foot valve's pedal, it holds the pedal down against its spring"
+    distractor: "the same steel weight half as tall (2.4 cm, 1.2 kg): in the pocket the pedal does not move"

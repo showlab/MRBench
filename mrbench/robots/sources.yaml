@@ -1,0 +1,22 @@
+# Upstream descriptions for robots that Isaac Lab does not ship.
+#
+# `mrbench assets fetch` downloads the URDF plus every mesh it references, at the
+# pinned commit, into $MRBENCH_THIRD_PARTY/robots/<name>/ (default <repo>/third_party).
+# Nothing listed here is redistributed with this repository (see NOTICE).
+#
+#   urdf          path of the URDF inside the upstream repo
+#   package_map   how `package://<pkg>/...` mesh URIs map to repo directories
+piper:
+  repo: agilexrobotics/piper_ros
+  commit: ac41fcbcdda598f01b51cf6175ed9a24d0dacadc   # upstream branch noetic
+  urdf: src/piper_description/urdf/piper_description.urdf
+  package_map:
+    piper_description: src/piper_description
+  license: MIT
+
+so101:
+  repo: TheRobotStudio/SO-ARM100
+  commit: a758567c3978dfeefe282ede0500085a48fe8f78   # upstream branch main
+  urdf: Simulation/SO101/so101_new_calib.urdf
+  package_map: {}
+  license: Apache-2.0

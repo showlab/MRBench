@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrbench"
+version = "1.0.0"
+description = "MRBench: benchmarking physical necessity reasoning in heterogeneous multi-robot manipulation"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "The MRBench Authors"}]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# The core (task cards, scene building, scoring, the mock engine, the command line, the comparison framework with
+# a stand-in model) runs with no GPU and no Isaac Sim.
+dependencies = ["pyyaml>=5.4"]
+
+[project.optional-dependencies]
+# the tests; numpy for the arms' kinematics (robots/kinematics.py), which plans the scripted references
+dev = ["pytest>=7", "numpy>=1.22"]
+# the method rows on the Anthropic Messages API (--backend api); the OpenAI-compatible backend needs nothing more
+api = ["anthropic>=2.3"]
+# Installed into the Isaac Sim interpreter, next to Isaac Sim 4.5 / Isaac Lab 2.1 (docs/GETTING_STARTED.md).
+# warp must match the one Kit 106.5 ships: two warp builds in one process corrupt the heap.
+isaac = ["warp-lang==1.5.0", "pillow", "numpy"]
+
+[project.urls]
+Homepage = "https://showlab.github.io/MRBench/"
+
+[project.scripts]
+mrbench = "mrbench.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mrbench*"]
+
+[tool.setuptools.package-data]
+mrbench = ["tasks/cards/*.yaml", "robots/*.yaml", "tasks/facts/*.json", "agent/gold.json", "agent/prompts/bench/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

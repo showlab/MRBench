@@ -1,0 +1,828 @@
+{
+ "Con-01": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "hold the east door open by its knob",
+     "draw the box out between the open doors by its handle"
+    ],
+    "hard": [
+     "hold the east door open by its knob",
+     "draw the box out between the open doors by its handle"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "draw the box out between the open doors by its handle"
+    ],
+    "hard": [
+     "draw the box out between the open doors by its handle"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Con-02": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "hold the blue leaf level by its bar"
+    ],
+    "hard": [
+     "hold the blue leaf level by its bar"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "north",
+     "west"
+    ],
+    [
+     "east",
+     "south",
+     "west"
+    ],
+    [
+     "north",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "hold the blue leaf level by its bar"
+    ],
+    "hard": [
+     "hold the blue leaf level by its bar"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Con-03": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "hold the lid open by its tab",
+     "lift the ball by its west side into the cradle",
+     "lift the ball by its east side into the cradle"
+    ],
+    "hard": [
+     "hold the lid open by its tab",
+     "lift the ball by its west side into the cradle",
+     "lift the ball by its east side into the cradle"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "lift the ball by its west side into the cradle",
+     "lift the ball by its east side into the cradle"
+    ],
+    "hard": [
+     "lift the ball by its west side into the cradle",
+     "lift the ball by its east side into the cradle"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Con-04": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "shut the west bleed valve: hold its lever down by its grip",
+     "shut the east bleed valve: hold its lever down by its grip",
+     "let air in: hold the foot valve's pedal down by its toe bar"
+    ],
+    "hard": [
+     "shut the west bleed valve: hold its lever down by its grip",
+     "shut the east bleed valve: hold its lever down by its grip",
+     "let air in: hold the foot valve's pedal down by its toe bar"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "north",
+     "south"
+    ],
+    [
+     "east",
+     "north",
+     "west"
+    ],
+    [
+     "east",
+     "south",
+     "west"
+    ],
+    [
+     "north",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "shut the west bleed valve: hold its lever down by its grip"
+    ],
+    "hard": [
+     "shut the west bleed valve: hold its lever down by its grip"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Rea-01": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "carry apple_0 from the start area into the crate"
+    ],
+    "hard": [
+     "carry apple_0 from the start area into the crate",
+     "carry orange_1 from the start area into the crate",
+     "carry apple_2 from the start area into the crate"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "north",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ],
+    [
+     "east",
+     "north",
+     "west"
+    ],
+    [
+     "east",
+     "south",
+     "west"
+    ],
+    [
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "carry apple_0 from the start area into the crate"
+    ],
+    "hard": [
+     "carry apple_0 from the start area into the crate",
+     "carry orange_1 from the start area into the crate",
+     "carry apple_2 from the start area into the crate"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Rea-02": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "lay the middle channel"
+    ],
+    "hard": [
+     "lay the middle channel"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ],
+    [
+     "north",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ]
+  }
+ },
+ "Rea-03": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "fill place 12",
+     "fill place 13",
+     "fill place 14"
+    ],
+    "hard": [
+     "fill place 12",
+     "fill place 13",
+     "fill place 14"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "fill place 12",
+     "fill place 14"
+    ],
+    "hard": [
+     "fill place 12",
+     "fill place 14"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  }
+ },
+ "Rea-04": {
+  "borrow": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [
+    "decoy"
+   ],
+   "things": [
+    "prop"
+   ],
+   "workable": []
+  },
+  "exact": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "shortfall": {
+   "feasible": false,
+   "minimal": [],
+   "missing": {
+    "easy": [
+     "bring the sponge on from the west spill and wipe the middle one",
+     "bring the sponge on from the middle spill and wipe the east one"
+    ],
+    "hard": [
+     "bring the sponge on from the west spill and wipe the middle one",
+     "bring the sponge on from the middle spill and wipe the east one"
+    ]
+   },
+   "rejected": [],
+   "things": [],
+   "workable": []
+  },
+  "surplus": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "north",
+     "south",
+     "west"
+    ]
+   ]
+  },
+  "swapped": {
+   "feasible": true,
+   "minimal": [
+    [
+     "east",
+     "west"
+    ]
+   ],
+   "missing": {
+    "easy": [],
+    "hard": []
+   },
+   "rejected": [],
+   "things": [],
+   "workable": [
+    [
+     "east",
+     "south",
+     "west"
+    ]
+   ]
+  }
+ }
+}
