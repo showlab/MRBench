@@ -20,7 +20,7 @@
 <p align="center"><sup>*</sup> equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup> corresponding author</p>
 
 <p align="center">
-📄 Paper (coming soon) &nbsp;|&nbsp;
+📄 <a href="https://arxiv.org/abs/2611.32803">Paper</a> &nbsp;|&nbsp;
 💻 <a href="https://github.com/showlab/MRBench">Code</a> &nbsp;|&nbsp;
 🌐 <a href="https://showlab.github.io/MRBench/">Project Page</a>
 </p>
