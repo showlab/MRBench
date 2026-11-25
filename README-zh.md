@@ -24,7 +24,7 @@
 <p align="center"><sup>*</sup> 共同第一作者 &nbsp;&middot;&nbsp; <sup>&dagger;</sup> 通讯作者</p>
 
 <p align="center">
-📄 论文（即将公开） &nbsp;|&nbsp;
+📄 <a href="https://arxiv.org/abs/2611.32803">论文</a> &nbsp;|&nbsp;
 🌐 <a href="https://showlab.github.io/MRBench/">项目主页</a>
 </p>
 
@@ -167,7 +167,7 @@ assets/       logo 和论文配图
 @article{chen2026mrbench,
   title={MRBench: Benchmarking Physical Necessity Reasoning in Heterogeneous Multi-Robot Manipulation},
   author={Chen, Yanzhe and Cao, Zhijun and An, Ruihe and Gong, Chang and Shou, Mike Zheng},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2611.32803},
   year={2026}
 }
 ```

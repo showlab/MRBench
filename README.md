@@ -24,7 +24,7 @@
 <p align="center"><sup>*</sup> equal contribution &nbsp;&middot;&nbsp; <sup>&dagger;</sup> corresponding author</p>
 
 <p align="center">
-📄 Paper (coming soon) &nbsp;|&nbsp;
+📄 <a href="https://arxiv.org/abs/2611.32803">Paper</a> &nbsp;|&nbsp;
 🌐 <a href="https://showlab.github.io/MRBench/">Project Page</a>
 </p>
 
@@ -180,7 +180,7 @@ If you use MRBench, please cite the paper:
 @article{chen2026mrbench,
   title={MRBench: Benchmarking Physical Necessity Reasoning in Heterogeneous Multi-Robot Manipulation},
   author={Chen, Yanzhe and Cao, Zhijun and An, Ruihe and Gong, Chang and Shou, Mike Zheng},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2611.32803},
   year={2026}
 }
 ```

@@ -14,7 +14,8 @@ authors:
 preferred-citation:
   type: article
   title: "MRBench: Benchmarking Physical Necessity Reasoning in Heterogeneous Multi-Robot Manipulation"
-  journal: "arXiv preprint arXiv:"
+  journal: "arXiv preprint arXiv:2611.32803"
+  url: "https://arxiv.org/abs/2611.32803"
   year: 2026
   authors:
     - {family-names: Chen, given-names: Yanzhe}
